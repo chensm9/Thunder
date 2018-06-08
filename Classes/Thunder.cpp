@@ -262,6 +262,7 @@ void Thunder::stopAc() {
         this->addChild(gameOver, 2);
         this->removeChild(this->player);
         CCDirector::sharedDirector()->pause();
+        _eventDispatcher->removeAllEventListeners();
     });
     SimpleAudioEngine::getInstance()->playEffect("music/explore.wav");
     auto seq = Sequence::create(exploreAnimate, signal, nullptr);
